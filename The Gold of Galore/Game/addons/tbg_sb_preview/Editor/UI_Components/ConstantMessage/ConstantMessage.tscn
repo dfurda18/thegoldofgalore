@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://t2ah1hs7sj2r"]
+
+[ext_resource type="Script" path="res://addons/tbg_sb_preview/Editor/UI_Components/ConstantMessage/ConstantMessage.gd" id="1_xxyqe"]
+[ext_resource type="Shader" path="res://addons/tbg_sb_preview/Editor/assets/shaders/texture_color.gdshader" id="2_qkd4a"]
+[ext_resource type="Script" path="res://addons/tbg_sb_preview/Editor/UI_Components/commons/Icon/Icon.gd" id="3_3so00"]
+[ext_resource type="PackedScene" uid="uid://6urp2c40oulj" path="res://addons/tbg_sb_preview/Editor/UI_Components/commons/Pressable/Pressable.tscn" id="4_iqyai"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60dh3"]
+bg_color = Color(0, 0, 0, 0.0941176)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.152941, 0.152941, 0.152941, 1)
+corner_detail = 20
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1xpnn"]
+shader = ExtResource("2_qkd4a")
+shader_parameter/color = Color(1, 1, 1, 1)
+
+[node name="ConstantMessage" type="Panel"]
+custom_minimum_size = Vector2(40, 80)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_60dh3")
+script = ExtResource("1_xxyqe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.823529, 0.368627, 0.270588, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.584314)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 14
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 4
+
+[node name="MouseTooltip" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
+material = SubResource("ShaderMaterial_1xpnn")
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_vertical = 4
+expand_mode = 1
+script = ExtResource("3_3so00")
+use_resource_loader = null
+icon_name = "close.svg"
+
+[node name="Pressable" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/MouseTooltip" instance=ExtResource("4_iqyai")]
+process_priority = -1
+layout_mode = 1
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/MouseTooltip/Pressable" to="." method="_on_pressable_pressed"]

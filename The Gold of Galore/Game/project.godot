@@ -1,0 +1,42 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Game"
+run/main_scene="res://Scenes/Game.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+TBG="*res://addons/TBG/TBG.gd"
+SB="*res://addons/tbg_sb_preview/SB.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[editor]
+
+import/use_multiple_threads=false
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/TBG/plugin.cfg", "res://addons/tbg_sb_preview/plugin.cfg")
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+
+[tbg]
+
+settings={}

@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxegps8sn6q0u"]
+
+[ext_resource type="Script" path="res://addons/TBG/Editor/DockPanel.gd" id="1_f13ip"]
+[ext_resource type="Script" path="res://addons/TBG/Editor/PropertiesView.gd" id="4_7tls7"]
+[ext_resource type="Script" path="res://addons/TBG/Editor/AssetTree.gd" id="4_rg6yk"]
+
+[node name="Toon Boom" type="VBoxContainer"]
+offset_left = 720.0
+offset_top = 4.0
+offset_right = 1131.0
+offset_bottom = 1069.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_f13ip")
+
+[node name="Container" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Tabs" type="TabContainer" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Assets" type="VBoxContainer" parent="Container/Tabs"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ListTitle" type="Label" parent="Container/Tabs/Assets"]
+visible = false
+layout_mode = 2
+text = "Scene: \"DockPanel.tscn\""
+
+[node name="List" type="ItemList" parent="Container/Tabs/Assets"]
+visible = false
+layout_mode = 2
+theme_override_constants/v_separation = 0
+allow_reselect = true
+auto_height = true
+
+[node name="ProjectFilesLabel" type="Label" parent="Container/Tabs/Assets"]
+layout_mode = 2
+text = "Project Files"
+
+[node name="Tree" type="Tree" parent="Container/Tabs/Assets"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/v_separation = 0
+columns = 2
+allow_rmb_select = true
+hide_root = true
+select_mode = 1
+script = ExtResource("4_rg6yk")
+selected_path = null
+
+[node name="Scenes" type="VBoxContainer" parent="Container/Tabs"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Tree" type="Tree" parent="Container/Tabs/Scenes"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/v_separation = 0
+columns = 2
+allow_rmb_select = true
+hide_root = true
+select_mode = 1
+script = ExtResource("4_rg6yk")
+selected_path = null
+
+[node name="Settings" type="VBoxContainer" parent="Container/Tabs"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 0
+script = ExtResource("4_7tls7")
+
+[node name="Toolbar" type="HBoxContainer" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[connection signal="item_activated" from="Container/Tabs/Assets/List" to="." method="_on_asset_list_item_activated"]
+[connection signal="item_selected" from="Container/Tabs/Assets/List" to="." method="_on_scene_asset_list_item_selected"]
+[connection signal="context_menu" from="Container/Tabs/Assets/Tree" to="." method="_on_tree_context_menu"]
+[connection signal="drag_start" from="Container/Tabs/Assets/Tree" to="." method="_on_tree_drag_start"]
+[connection signal="path_activated" from="Container/Tabs/Assets/Tree" to="." method="_on_tree_path_activated"]
+[connection signal="path_selected" from="Container/Tabs/Assets/Tree" to="." method="_on_tree_path_selected"]
+[connection signal="context_menu" from="Container/Tabs/Scenes/Tree" to="." method="_on_tree_context_menu"]
+[connection signal="drag_start" from="Container/Tabs/Scenes/Tree" to="." method="_on_tree_drag_start"]
+[connection signal="path_activated" from="Container/Tabs/Scenes/Tree" to="." method="_on_tree_path_activated"]
+[connection signal="path_selected" from="Container/Tabs/Scenes/Tree" to="." method="_on_tree_path_selected"]

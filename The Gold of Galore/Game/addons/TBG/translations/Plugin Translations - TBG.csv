@@ -1,0 +1,67 @@
+keys,en,es,ja,zh
+RELOAD,Reload,Volver a cargar,リロード,重新加载
+OPEN_IN_ST,Open in Scene Tree,Abrir en el Editor del Árbol de Escenas,カットツリーで開く,在场景树中打开
+SHOW_IN_FS,Show in FileSystem,Mostrar en el Sistema de Archivos,ファイルシステムに表示,在文件系统中显示
+SHOW_FOLDER,Open Containing Folder,Abrir carpeta contenedora,含まれるフォルダーを開く,打开包含文件夹
+RESET_ALL_CHANGES,Reset all changes in,Restablecer todos los cambios en,次のすべての変更をリセット,重置所有更改于
+NEW_FROM,New from,Nuevo desde,新規作成,新建自
+RELOAD_S_T,Reload skeleton transforms,Volver a cargar transformaciones de esqueleto,スケルトントランスフォームをリロード,重新加载骨架变换
+REIMPORT,Reimport,Volver a importar,再インポート,重新导入
+ORG_ASSET,Original Asset,Recurso original,オリジナルアセット,原始资产
+EDIT,Edit,Editar,編集,编辑
+PREVIEW,Preview,Previsualización,プレビュー,预览
+SCRIPT,Script,Comando,スクリプト,脚本
+NEW,New,Nuevo,新規,新建
+NEW_FROM_TEMPLATE,New from template,Nuevo desde plantilla,テンプレートから新規作成,从模板新建
+MOTION,Motion,Movimiento,モーション,运动
+STOP,Stop,Detener,中止,停止
+DUPLICATE,Duplicate,Duplicar,重複,复制
+DELETE,Delete,Eliminar,削除,删除
+CREATE_F_P,Create Flipped Permutations,Crear permutaciones invertidas,反転した順列を作成,创建翻转排列
+VIEW_MM_LIST,View MotionMode list,Ver lista de MotionMode,MotionModeリストを表示,查看 MotionMode 列表
+DELETE_MM,Delete MotionMode,Eliminar MotionMode,MotionModeを削除,删除 MotionMode
+DELETE_ALL,Delete All,Eliminar todo,すべて削除,全部删除
+VIEW,View,Ver,表示,查看
+FRAME_ALL,Frame All,Encuadrar todo,すべてをフレーム化,全部装帧
+ZOOM_LEVEL,Zoom Level,Nivel de zoom,ズームレベル,缩放级别
+ZOOM_IN,Zoom in,Acercar,ズームイン,放大
+ZOOM_OUT,Zoom out,Alejar,ズームアウト,缩小
+DEBUG,Debug,Depurar,デバッグ,调试
+DUMP_TO_JSON,Dump asset to JSON,Volcar el recurso a JSON,アセットをJSONにダンプ,将资产转为 JSON
+PIXEL_SIZE,Pixel size,Tamaño de píxel,ピクセルサイズ,像素大小
+LOAD_CONFIG,Load Configuration,Cargar configuración,構成をロード,加载配置
+SAVE_CONFIG,Save Configuration,Guardar configuración,構成を保存,保存配置
+EXPORT,Export,Exportar,エクスポート,导出
+SCENE_SS,Scene Snapshot,Instantánea de escena,カットスナップショット,场景快照
+OPEN,Open,Abrir,開く,打开
+SHOW_TBG_IN_F_M,Show TBG in File Manager,Mostrar TBG en el Administrador de archivos,ファイルマネージャーでTBGを表示,在文件管理器中显示 TBG
+SOURCE_ASSET_NOT_EX,Source asset is not exported,No se exportó el recurso de origen,ソースアセットがエクスポートされない,源资产未导出
+EDIT_SOURCE_ASSET,Edit Source Asset,Editar recurso de origen,ソースアセットを編集,编辑源资产
+SHOW_SOURCE_ASSET_IN_F_M,Show Source Asset in File Manager,Mostrar recurso de origen en el Administrador de archivos,ファイルマネージャーにソースアセットを表示,在文件管理器中显示源资产
+ORG_ASSET_UNKNOWN,Original Asset unknown,Recurso original desconocido,元のアセットが不明,原始资产未知
+ERR_FIND_ASSET_EDITOR_APP,Can't find Asset Editor.app at: %s,No se puede encontrar la aplicación Asset Editor en: %s,次の場所でAsset Editorアプリが見つかりません: %s,在以下位置找不到 Asset Editor.app：%s
+ERR_FIND_ASSET_EDITOR_AT,Can't find AssetEditor at: %s,No se puede encontrar AssetEditor en: %s,次の場所でAssetEditorが見つかりません: %s,在以下位置找不到 AssetEditor：%s
+ERR_FIND_ASSET_EDITOR,Can't find AssetEditor,No se puede encontrar AssetEditor,AssetEditorが見つかりません,找不到 AssetEditor
+OPEN_GAME_ENGINE_FROM_JUMP,Please open the Game Engine Editor from Toon Boom Jump!,Abra el editor del motor de juego desde Toon Boom Jump!,Toon Boom Jump!から「ゲームエンジンエディター」を開いてください,请从 Toon Boom Jump! 打开 Game Engine Editor
+ASSETS,Assets,Assets,Assets,Assets
+SCENES,Scenes,Scenes,Scenes,Scenes
+SETTINGS,Settings,Settings,Settings,Settings
+PROJECT_FILES,Project Files,Project Files,Project Files,Project Files
+SCENE,Scene,Scene,Scene,Scene
+CURRENT_SCENE,Current Scene,Current Scene,Current Scene,Current Scene
+SHOW,Show,Show,Show,Show
+LOGGING,Logging,Logging,Logging,Logging
+BONES,Bones,Bones,Bones,Bones
+OPEN_MAIN_SCENE,Open Main Scene,Open Main Scene,Open Main Scene,Open Main Scene
+RELOAD_SCENES,Reload Scenes,Reload Scenes,Reload Scenes,Reload Scenes
+REIMPORT_ALL_ASSETS,Re-import All Assets,Re-import All Assets,Re-import All Assets,Re-import All Assets
+RELOAD_PROJECT,Reload Project,Reload Project,Reload Project,Reload Project
+SKINS,Skins,Skins,Skins,Skins
+HEIRARCHY,Heirarchy,Heirarchy,Heirarchy,Heirarchy
+ASSET,Asset,Asset,Asset,Asset
+MOTIONS,Motions,Movimiento,モーション,运动
+SPEED_SCALE,Speed Scale,Speed Scale,Speed Scale,Speed Scale
+UNUSED_WARNING_TOOLTIP,Right-click to temporarily hide this message,Right-click to temporarily hide this message,Right-click to temporarily hide this message,Right-click to temporarily hide this message
+UNUSED_WARNING_TEXT,Add Unused Source Animations,Add Unused Source Animations,Add Unused Source Animations,Add Unused Source Animations
+ZOOM_RESET,Reset zoom level,Reset zoom level,Reset zoom level,Reset zoom level
+DETACH,Detach,Detach,Detach,Detach

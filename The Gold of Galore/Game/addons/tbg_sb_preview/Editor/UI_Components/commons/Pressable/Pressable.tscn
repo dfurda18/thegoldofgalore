@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://6urp2c40oulj"]
+
+[ext_resource type="Script" path="res://addons/tbg_sb_preview/Editor/UI_Components/commons/Pressable/Pressable.gd" id="1_tapih"]
+
+[node name="Pressable" type="Control" groups=["pressable"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tapih")

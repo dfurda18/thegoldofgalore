@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d2tklkckcpo8b"]
+
+[ext_resource type="Script" path="res://addons/TBG/Editor/MotionModeResource.gd" id="1_6ecth"]
+
+[resource]
+script = ExtResource("1_6ecth")
+modes = Array[StringName]([&"None", &"Idle", &"Walk", &"Run", &"Jump", &"Crawl", &"Climb", &"Crouch", &"Action", &"Fire"])

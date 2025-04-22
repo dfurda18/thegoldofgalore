@@ -1,0 +1,29 @@
+keys,en,es,ja,zh
+OPEN_GSB,Opening Game Storyboard...,Abriendo Game Storyboard…,Game Storyboardを開く...,正在打开 Game Storyboard...
+GET_DATA_FROM_GSB,Successfully loaded data from Game Storyboard. Next loading thumbnails,Se cargaron correctamente los datos de Game Storyboard. Cargando miniaturas a continuación,Game Storyboardからデータを正常にロードしました。次はサムネイルの読み込み,成功从 Game Storyboard 加载数据下面加载缩略图
+SAVE_GS,Successfully saved Game Storyboard changes.,Se guardaron correctamente los cambios en Game Storyboard.,Game Storyboardの変更が正常に保存されました。,成功保存 Game Storyboard 更改。
+SYNC_UPDATE_DATA,Data synced!,¡Datos sincronizados!,データが同期されました!,数据已同步！
+GET_DATA_FROM_GS_ERR,"Unable to load data, did you save Game Storyboard changes?","No se pueden cargar los datos, ¿guardó los cambios de Game Storyboard?",データを読み込めません。Game Storyboardの変更を保存しましたか?,无法加载数据，您是否保存了 Game Storyboard 更改？
+SYNC_UPDATE_DATA_ERR,"Unable to sync data, try again!","No se pueden sincronizar los datos, inténtelo de nuevo.",データを同期できません。もう一度やり直してください!,无法同步数据，请重试！
+GSB_NOT_FOUND,Could not find the Game Storyboard application. Please open the Game Engine from Toon Boom Jump!,No se pudo encontrar la aplicación Game Storyboard. Abra el motor de juego desde Toon Boom Jump!,Game Storyboardアプリが見つかりませんでした。Toon Boom Jump!からゲームエンジンを開いてください,找不到 Game Storyboard 应用程序。请从 Toon Boom Jump! 打开 Game Engine
+ERR_FIND_GSB_APP,Can't find Game Storyboard.app at: %s,No se puede encontrar la aplicación Game Storyboard en: %s,Game Storyboard.app が次で見つかりません: %s,在以下位置找不到 Game Storyboard.app：%s
+ERR_FIND_GSB_AT,Can't find GameStoryboard at: %s,No se puede encontrar GameStoryboard en: %s,GameStoryboardが次で見つかりません: %s,在以下位置找不到 GameStoryboard：%s
+ERR_FIND_GSB,Can't find GameStoryboard,No se puede encontrar GameStoryboard,GameStoryboardが見つかりません,找不到 GameStoryboard
+OPEN_GAME_ENGINE_FROM_JUMP,Please open the Game Engine Editor from Toon Boom Jump!,Abra el editor del motor de juego desde Toon Boom Jump!,Toon Boom Jump!から「ゲームエンジンエディター」を開いてください,请从 Toon Boom Jump! 打开 Game Engine Editor
+LOAD_GSB_DATA_FIRST,You need to load data from Game Storyboard first!,Primero debe cargar datos desde Game Storyboard.,最初にGame Storyboardからデータを読み取る必要があります,您需要先从 Game Storyboard 加载数据！
+SYNC_FIRST,Changes not sent to Game Storyboard. Sync the data first!,Los cambios no se enviaron a Game Storyboard. Sincronice los datos primero.,変更がGame Storyboardに送信されません。最初にデータを同期してください!,更改未发送到 Game Storyboard。请先同步数据！
+IS_GSB_OPENED,"Oops, something went wrong. Is Game Storyboard opened? If it was just opened, try again.","Vaya, algo salió mal. ¿Está abierto Game Storyboard? Si se acaba de abrir, inténtelo de nuevo.",おっと、何か変です。Game Storyboardは開いていますか? 開いたばかりなら、もう一度やり直してください。,哎呀，出错了。Game Storyboard 打开了吗？如果才打开，请重试。
+OPENING_GSB,Opening Game Storyboard...,Abriendo Game Storyboard…,Game Storyboardを開いています...,正在打开 Game Storyboard...
+ZOOM_IN,Zoom in.,Acercar.,ズームインします。,放大。
+ZOOM_OUT,Zoom out.,Alejar.,ズームアウトします。,缩小。
+LOAD_DATA_BTN,Load data from Toon Boom Jump! storyboard.,Cargue datos desde el storyboard de Toon Boom Jump!.,Toon Boom Jump!の絵コンテからデータをロードします。,从 Toon Boom Jump! 故事板加载数据。
+SAVE_GSB_BTN,Save Toon Boom Jump! storyboard changes.,Guarde los cambios en el storyboard de Toon Boom Jump!.,Toon Boom Jump!の絵コンテの変更を保存します。,保存 Toon Boom Jump! 故事板更改。
+PUSH_CHANGES_BTN,Push changes from SB Preview to Toon Boom Jump! storyboard.,Fuerce los cambios de la previsualización del storyboard al storyboard de Toon Boom Jump!.,SBプレビューからの変更をToon Boom Jump! 絵コンテへプッシュします。,从 SB Preview 推送更改到 Toon Boom Jump! 故事板。
+OPEN_GSB_BTN,Open Game Storyboard.,Abra Game Storyboard.,Game Storyboardを開きます。,打开 Game Storyboard。
+SHOW_TOOLTIPS_BTN,Show/Hide mouse tooltips on hovering over objects.,Mostrar/Ocultar consejos sobre herramientas del ratón al pasar el cursor sobre objetos.,オブジェクトの上にマウスを置くと、マウスツールチップを表示/非表示します。,显示/隐藏鼠标悬停于对象时的工具提示。
+PRESS_SCENE,Press to show scene details in inspector.,Pulse para mostrar los detalles de la escena en el inspector.,押すとインスペクターにカットの詳細を表示します。,按下以在检查器中显示场景详细信息。
+UNCOLLAPSE_BTN,Press to uncollapse.,Pulse para expandir.,押すと折りたたみが解除されます。,按下以展开。
+COLLAPSE_BTN,Press to collapse.,Pulse para contraer.,押すと折りたたまれます。,按下以折叠。
+PRESS_PANEL,Press to show panel details in inspector. Press and drag to change the order inside the scene.,Pulse para mostrar los detalles del panel en el inspector. Pulse y arrastre para cambiar el orden dentro de la escena.,押すとインスペクターにパネルの詳細を表示します。カット内の順序を変えるには、押してドラッグします。,按下以在检查器中显示分解镜头详细信息。按下并拖动以更改场景内顺序。
+PRESS_JUMP,Press to view in inspector.,Pulse para ver en el inspector.,押すとインスペクターに表示されます。,按下以在检查器中查看。
+FORCE_GS_LOAD,You have to load data from game storyboard at least once before using the plugin!,You have to load data from game storyboard at least once before using the plugin!,You have to load data from game storyboard at least once before using the plugin!,You have to load data from game storyboard at least once before using the plugin!

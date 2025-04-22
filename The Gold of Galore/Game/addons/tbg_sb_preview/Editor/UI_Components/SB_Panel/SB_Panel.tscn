@@ -1,0 +1,117 @@
+[gd_scene load_steps=7 format=3 uid="uid://3jcc4nrjnh05"]
+
+[ext_resource type="PackedScene" uid="uid://n7vx0kn66i0b" path="res://addons/tbg_sb_preview/Editor/UI_Components/SB_Node/SB_Node.tscn" id="1_sha6h"]
+[ext_resource type="Script" path="res://addons/tbg_sb_preview/Editor/UI_Components/SB_Panel/SB_Panel.gd" id="2_k3jss"]
+[ext_resource type="Shader" path="res://addons/tbg_sb_preview/Editor/assets/shaders/texture_color.gdshader" id="3_vrh4p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqoss"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.929412, 0.533333, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 20
+shadow_color = Color(1, 1, 1, 0.498039)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hc4i2"]
+resource_local_to_scene = true
+shader = ExtResource("3_vrh4p")
+shader_parameter/color = Color(0.929412, 0.533333, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er3xe"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.929412, 0.533333, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 20
+shadow_color = Color(1, 1, 1, 0.498039)
+
+[node name="SB_Panel" instance=ExtResource("1_sha6h")]
+z_index = 1
+custom_minimum_size = Vector2(250, 70)
+offset_left = -2.64865
+offset_top = -1.05946
+offset_right = 247.351
+offset_bottom = 248.941
+script = ExtResource("2_k3jss")
+shape = 0
+captions = {
+"notes": ""
+}
+color = Color(0, 0, 0, 1)
+border_color = Color(0.929412, 0.533333, 0, 1)
+
+[node name="Panel" parent="." index="0"]
+visible = false
+theme_override_styles/panel = SubResource("StyleBoxFlat_cqoss")
+
+[node name="TextureRect" parent="Panel/HBoxContainer" index="0"]
+size_flags_horizontal = 6
+
+[node name="Name" parent="Panel/HBoxContainer/Control" index="0"]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 300.0
+offset_bottom = 210.0
+grow_horizontal = 1
+grow_vertical = 1
+start_size = Vector2(100, 70)
+
+[node name="DropdownButton" parent="Panel/HBoxContainer" index="2"]
+material = SubResource("ShaderMaterial_hc4i2")
+
+[node name="UncollapsedPanel" parent="." index="1"]
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_bottom = 250.0
+grow_vertical = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_er3xe")
+
+[node name="HBoxContainer" parent="UncollapsedPanel" index="0"]
+anchor_bottom = 0.28
+
+[node name="TextureRect" parent="UncollapsedPanel/HBoxContainer" index="0"]
+visible = false
+size_flags_horizontal = 6
+
+[node name="Name" parent="UncollapsedPanel/HBoxContainer/Control" index="0"]
+offset_top = -2.0
+offset_right = 382.0
+offset_bottom = 150.0
+start_size = Vector2(191, 74)
+
+[node name="DropdownButton" parent="UncollapsedPanel/HBoxContainer" index="2"]
+material = SubResource("ShaderMaterial_hc4i2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UncollapsedPanel" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.27
+anchor_right = 1.0
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Thumbnail" type="TextureRect" parent="UncollapsedPanel/VBoxContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Pressable" parent="." index="2"]
+text_tooltip = "PRESS_PANEL"
+
+[node name="MultiselectComponent" parent="." index="3"]
+do_not_update_list = Array[String](["position"])

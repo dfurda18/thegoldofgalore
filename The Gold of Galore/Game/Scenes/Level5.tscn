@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkn4ao2b1uhv5"]
+
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_2yp7f"]
+[ext_resource type="Script" path="res://Scripts/PlayerController.gd" id="2_cs14y"]
+[ext_resource type="Script" path="res://Scripts/Health.gd" id="3_3a5y2"]
+[ext_resource type="Script" path="res://Scripts/CoinCounter.gd" id="4_p2v3w"]
+[ext_resource type="PackedScene" uid="uid://ctjj6j7l6r687" path="res://UI/Gameplay/player_camera.tscn" id="5_vd2ds"]
+
+[sub_resource type="Resource" id="Resource_iuopi"]
+script = ExtResource("3_3a5y2")
+MAX_HEALTH = 3
+
+[sub_resource type="Resource" id="Resource_bca5e"]
+script = ExtResource("4_p2v3w")
+coin_max = 0
+
+[node name="Level5" type="Node2D"]
+script = ExtResource("1_2yp7f")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Background" type="Marker2D" parent="."]
+
+[node name="Player" type="Marker2D" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Player"]
+script = ExtResource("2_cs14y")
+HP = SubResource("Resource_iuopi")
+Count = SubResource("Resource_bca5e")
+
+[node name="PlayerCamera" parent="Player" instance=ExtResource("5_vd2ds")]

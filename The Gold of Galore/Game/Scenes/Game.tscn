@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://oa4gpfudmbck"]
+
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_boe12"]
+[ext_resource type="PackedScene" uid="uid://cnfju45fcre1f" path="res://Scenes/Title.tscn" id="2_72037"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_boe12")
+
+[node name="Title" parent="." instance=ExtResource("2_72037")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="Play" from="Title" to="." method="_on_title_play"]

@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=3 uid="uid://omjhie76fsrn"]
+
+[ext_resource type="Script" path="res://addons/tbg_sb_preview/Editor/UI_Components/SB_Jump/SB_Jump.gd" id="1_cicu8"]
+[ext_resource type="PackedScene" uid="uid://6urp2c40oulj" path="res://addons/tbg_sb_preview/Editor/UI_Components/commons/Pressable/Pressable.tscn" id="2_ajsty"]
+[ext_resource type="Shader" path="res://addons/tbg_sb_preview/Editor/assets/shaders/ring.gdshader" id="3_cv7qa"]
+[ext_resource type="Script" path="res://addons/tbg_sb_preview/Editor/UI_Components/commons/TextLabel/TextLabel.gd" id="4_ka2ov"]
+[ext_resource type="PackedScene" uid="uid://b4na7af8kjvtl" path="res://addons/tbg_sb_preview/Editor/UI_Components/ECS/MultiselectComponent/MultiselectComponent.tscn" id="4_rjoop"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dh7gh"]
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 20
+shadow_color = Color(1, 1, 1, 0.329412)
+shadow_size = 7
+anti_aliasing_size = 2.247
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_o88eh"]
+noise_type = 0
+frequency = 0.0001
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xyvi7"]
+seamless = true
+noise = SubResource("FastNoiseLite_o88eh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3c8xs"]
+resource_local_to_scene = true
+shader = ExtResource("3_cv7qa")
+shader_parameter/radius = 0.56
+shader_parameter/thickness = 0.28
+shader_parameter/color = Color(0.4, 0.803922, 0.666667, 1)
+shader_parameter/brightness = 1.47
+shader_parameter/angular_speed = -2.23
+shader_parameter/radial_speed = -1.05
+shader_parameter/alpha = 1.0
+shader_parameter/noise = SubResource("NoiseTexture2D_xyvi7")
+
+[node name="SBJump" type="Node2D"]
+script = ExtResource("1_cicu8")
+
+[node name="Pressable" parent="." instance=ExtResource("2_ajsty")]
+text_tooltip = "PRESS_JUMP"
+tooltip_priority = null
+
+[node name="SelectedVisual" type="Panel" parent="Pressable"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dh7gh")
+
+[node name="JumpFromCollision" parent="." instance=ExtResource("2_ajsty")]
+process_priority = -1
+custom_minimum_size = Vector2(20, 20)
+text_tooltip = "Press to move along border."
+tooltip_priority = true
+
+[node name="JumpToCollision" parent="." instance=ExtResource("2_ajsty")]
+process_priority = -1
+custom_minimum_size = Vector2(20, 20)
+text_tooltip = "Press to move along border."
+tooltip_priority = true
+
+[node name="JumpFromVisualIndicator" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_3c8xs")
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="JumpToVisualIndicator" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_3c8xs")
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="LabelTop" type="Label" parent="."]
+offset_right = 276.0
+offset_bottom = 210.0
+scale = Vector2(0.333333, 0.333333)
+theme_override_colors/font_color = Color(1, 1, 1, 0.729412)
+theme_override_font_sizes/font_size = 54
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 2
+script = ExtResource("4_ka2ov")
+
+[node name="LabelBottom" type="Label" parent="."]
+offset_right = 276.0
+offset_bottom = 210.0
+scale = Vector2(0.333333, 0.333333)
+theme_override_colors/font_color = Color(1, 1, 1, 0.729412)
+theme_override_font_sizes/font_size = 54
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("4_ka2ov")
+
+[node name="MultiselectComponent" parent="." instance=ExtResource("4_rjoop")]
+do_not_update_list = Array[String](["position"])
+
+[connection signal="pressed" from="Pressable" to="." method="_on_pressed"]
+[connection signal="shift_pressed" from="Pressable" to="." method="_on_shift_pressed"]
+[connection signal="hover" from="JumpFromCollision" to="." method="_on_jump_from_collision_hover"]
+[connection signal="pressed" from="JumpFromCollision" to="." method="_on_jump_from_collision_pressed"]
+[connection signal="released" from="JumpFromCollision" to="." method="_on_jump_from_collision_released"]
+[connection signal="hover" from="JumpToCollision" to="." method="_on_jump_to_collision_hover"]
+[connection signal="pressed" from="JumpToCollision" to="." method="_on_jump_to_collision_pressed"]
+[connection signal="released" from="JumpToCollision" to="." method="_on_jump_to_collision_released"]

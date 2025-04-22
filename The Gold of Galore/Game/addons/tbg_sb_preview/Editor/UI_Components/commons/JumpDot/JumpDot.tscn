@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dynw0m0s57dn7"]
+
+[ext_resource type="Script" path="res://addons/tbg_sb_preview/Editor/UI_Components/commons/JumpDot/JumpDot.gd" id="1_52qc3"]
+[ext_resource type="Shader" path="res://addons/tbg_sb_preview/Editor/UI_Components/commons/JumpDot/JumpDot.gdshader" id="2_aymlw"]
+[ext_resource type="PackedScene" uid="uid://6urp2c40oulj" path="res://addons/tbg_sb_preview/Editor/UI_Components/commons/Pressable/Pressable.tscn" id="3_a3b2t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sxyga"]
+shader = ExtResource("2_aymlw")
+
+[node name="JumpDot" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 20.0
+offset_bottom = 20.0
+script = ExtResource("1_52qc3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_sxyga")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pressable" parent="." instance=ExtResource("3_a3b2t")]
+layout_mode = 1

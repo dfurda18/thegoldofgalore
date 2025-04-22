@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://tdra3t30ugc6"]
+
+[ext_resource type="Script" path="res://addons/tbg_sb_preview/Editor/UI_Components/ContextMenu/ContextMenu.gd" id="1_scm00"]
+[ext_resource type="PackedScene" uid="uid://cd11pvnl0q5w" path="res://addons/tbg_sb_preview/Editor/UI_Components/ContextMenu/ContextMenuButton.tscn" id="2_po5b7"]
+[ext_resource type="PackedScene" uid="uid://bmdnc7ysu56p3" path="res://addons/tbg_sb_preview/Editor/UI_Components/ContextMenu/ContextMenuSeparator.tscn" id="3_2iqrh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbysd"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 20
+
+[node name="ContextMenu" type="Control"]
+visible = false
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 100.0
+offset_bottom = 50.0
+script = ExtResource("1_scm00")
+ButtonScene = ExtResource("2_po5b7")
+SeparatorScene = ExtResource("3_2iqrh")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tbysd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.03
+anchor_right = 0.95
+anchor_bottom = 0.97
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1

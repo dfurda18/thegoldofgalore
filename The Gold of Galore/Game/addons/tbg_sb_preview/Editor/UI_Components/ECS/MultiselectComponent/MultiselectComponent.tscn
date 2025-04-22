@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4na7af8kjvtl"]
+
+[ext_resource type="Script" path="res://addons/tbg_sb_preview/Editor/UI_Components/ECS/MultiselectComponent/MultiselectComponent.gd" id="1_auahf"]
+
+[node name="MultiselectComponent" type="Node"]
+script = ExtResource("1_auahf")

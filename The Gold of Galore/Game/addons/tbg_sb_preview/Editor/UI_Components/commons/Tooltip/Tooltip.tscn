@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt0agjxl5f2sh"]
+
+[ext_resource type="Script" path="res://addons/tbg_sb_preview/Editor/UI_Components/commons/Tooltip/Tooltip.gd" id="1_7ppo2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eiynw"]
+bg_color = Color(0, 0, 0, 0.658824)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_right = 1.0
+
+[node name="Tooltip" type="Control"]
+z_index = 2
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 117.5
+offset_top = -74.75
+offset_right = 177.5
+offset_bottom = -34.75
+mouse_filter = 2
+script = ExtResource("1_7ppo2")
+offset = Vector2(10, -12)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_eiynw")
+vertical_alignment = 1

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dbk85tftt411q"
+
+[deps]
+
+files=["res://addons/tbg_sb_preview/translations/Plugin Translations - SB Preview.en.translation", "res://addons/tbg_sb_preview/translations/Plugin Translations - SB Preview.es.translation", "res://addons/tbg_sb_preview/translations/Plugin Translations - SB Preview.ja.translation", "res://addons/tbg_sb_preview/translations/Plugin Translations - SB Preview.zh.translation"]
+
+source_file="res://addons/tbg_sb_preview/translations/Plugin Translations - SB Preview.csv"
+dest_files=["res://addons/tbg_sb_preview/translations/Plugin Translations - SB Preview.en.translation", "res://addons/tbg_sb_preview/translations/Plugin Translations - SB Preview.es.translation", "res://addons/tbg_sb_preview/translations/Plugin Translations - SB Preview.ja.translation", "res://addons/tbg_sb_preview/translations/Plugin Translations - SB Preview.zh.translation"]
+
+[params]
+
+compress=true
+delimiter=0

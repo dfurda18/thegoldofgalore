@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd11pvnl0q5w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmsfn"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmt3t"]
+bg_color = Color(1, 1, 1, 0.215686)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 20
+
+[node name="ContextMenuButton" type="Button"]
+custom_minimum_size = Vector2(0, 20)
+offset_right = 90.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_tmsfn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kmt3t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tmsfn")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_tmsfn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_tmsfn")

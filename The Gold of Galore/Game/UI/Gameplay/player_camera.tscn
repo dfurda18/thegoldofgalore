@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctjj6j7l6r687"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerCamera.gd" id="1_4bim7"]
+[ext_resource type="PackedScene" uid="uid://b4sj0h7icx2tt" path="res://UI/Gameplay/gameplay_ui.tscn" id="2_rbidd"]
+
+[node name="PlayerCamera" type="Camera2D"]
+script = ExtResource("1_4bim7")
+Y_Offset = 275
+smoothing_distance = 2
+
+[node name="GameplayUI" parent="." instance=ExtResource("2_rbidd")]

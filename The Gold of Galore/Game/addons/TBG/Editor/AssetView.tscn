@@ -1,0 +1,370 @@
+[gd_scene load_steps=10 format=3 uid="uid://b3tkcvvigpcng"]
+
+[ext_resource type="Script" path="res://addons/TBG/Editor/AssetView.gd" id="1"]
+[ext_resource type="Script" path="res://addons/TBG/Editor/ExpanderButton.gd" id="2_xgna2"]
+[ext_resource type="Script" path="res://addons/TBG/Editor/Grid.gd" id="3_bsodb"]
+[ext_resource type="Script" path="res://addons/TBG/Editor/PropertiesView.gd" id="3_e6xqh"]
+[ext_resource type="Script" path="res://addons/TBG/Editor/EditorButton.gd" id="5_2x2lf"]
+[ext_resource type="Theme" uid="uid://dxpy8el84vdvr" path="res://addons/TBG/Resources/TBG_AssetView.tres" id="5_6sk0i"]
+[ext_resource type="Script" path="res://addons/TBG/Editor/AssetContainer.gd" id="5_ts071"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ku80q"]
+bg_color = Color(0.615686, 0.615686, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jguu1"]
+bg_color = Color(0.3, 0.3, 0.3, 1)
+
+[node name="AssetViewer" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1")
+
+[node name="Menu" type="MenuBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+flat = true
+prefer_global_menu = false
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sidebar" type="VBoxContainer" parent="HSplitContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="UnusedWarning" type="VBoxContainer" parent="HSplitContainer/Sidebar"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HSplitContainer/Sidebar/UnusedWarning"]
+layout_mode = 2
+tooltip_text = "Right-click to temporarily hide this message"
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = " "
+
+[node name="Button2" type="Button" parent="HSplitContainer/Sidebar/UnusedWarning/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ku80q")
+button_mask = 2
+text = "Add Unused Source Animations"
+
+[node name="Motion" type="VBoxContainer" parent="HSplitContainer/Sidebar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 231)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Expander" type="Button" parent="HSplitContainer/Sidebar/Motion"]
+layout_mode = 2
+focus_mode = 0
+script = ExtResource("2_xgna2")
+translation_key = "MOTIONS"
+
+[node name="Properties" type="VBoxContainer" parent="HSplitContainer/Sidebar/Motion"]
+layout_mode = 2
+theme_override_constants/separation = 1
+script = ExtResource("3_e6xqh")
+
+[node name="List" type="ItemList" parent="HSplitContainer/Sidebar/Motion"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+allow_reselect = true
+allow_rmb_select = true
+
+[node name="Skin" type="VBoxContainer" parent="HSplitContainer/Sidebar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 206)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Expander" type="Button" parent="HSplitContainer/Sidebar/Skin"]
+layout_mode = 2
+focus_mode = 0
+text = "Skins"
+script = ExtResource("2_xgna2")
+translation_key = "SKINS"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/Sidebar/Skin"]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="List" type="VBoxContainer" parent="HSplitContainer/Sidebar/Skin/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Heirarchy" type="VBoxContainer" parent="HSplitContainer/Sidebar"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 81)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Expander" type="Button" parent="HSplitContainer/Sidebar/Heirarchy"]
+layout_mode = 2
+text = "Heirarchy"
+script = ExtResource("2_xgna2")
+translation_key = "HEIRARCHY"
+
+[node name="Tree" type="Tree" parent="HSplitContainer/Sidebar/Heirarchy"]
+layout_mode = 2
+
+[node name="Properties" type="VBoxContainer" parent="HSplitContainer/Sidebar/Heirarchy"]
+layout_mode = 2
+theme_override_constants/separation = 1
+script = ExtResource("3_e6xqh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/Sidebar"]
+visible = false
+layout_mode = 2
+
+[node name="Options" type="VBoxContainer" parent="HSplitContainer/Sidebar/VBoxContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.545098)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 1
+script = ExtResource("3_e6xqh")
+
+[node name="Control" type="Control" parent="HSplitContainer/Sidebar"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="View" type="PanelContainer" parent="HSplitContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_jguu1")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HSplitContainer/HBoxContainer/View"]
+layout_mode = 2
+stretch = true
+
+[node name="Viewport" type="SubViewport" parent="HSplitContainer/HBoxContainer/View/SubViewportContainer"]
+unique_name_in_owner = true
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+physics_object_picking = true
+physics_object_picking_sort = true
+size = Vector2i(964, 685)
+render_target_update_mode = 4
+
+[node name="World" type="Node2D" parent="HSplitContainer/HBoxContainer/View/SubViewportContainer/Viewport"]
+unique_name_in_owner = true
+
+[node name="Grid" type="Node2D" parent="HSplitContainer/HBoxContainer/View/SubViewportContainer/Viewport/World"]
+unique_name_in_owner = true
+script = ExtResource("3_bsodb")
+
+[node name="AssetContainer" type="MarginContainer" parent="HSplitContainer/HBoxContainer/View"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("5_ts071")
+
+[node name="Overlay" type="VBoxContainer" parent="HSplitContainer/HBoxContainer/View/AssetContainer"]
+layout_mode = 2
+
+[node name="Top" type="HBoxContainer" parent="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay"]
+layout_mode = 2
+alignment = 2
+
+[node name="ZoomOut" type="Button" parent="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Top"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+tooltip_text = "Resize view to fit"
+theme = ExtResource("5_6sk0i")
+flat = true
+expand_icon = true
+script = ExtResource("5_2x2lf")
+icon_name = "ZoomLess"
+icon_size = 32
+
+[node name="ZoomPercent" type="Button" parent="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Top"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Reset zoom level"
+theme_override_colors/font_color = Color(0.901961, 0.901961, 0.901961, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.901961, 0.901961, 1)
+theme_override_colors/font_focus_color = Color(0.839216, 0.839216, 0.839216, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+text = "200 %"
+flat = true
+
+[node name="ZoomIn" type="Button" parent="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Top"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("5_6sk0i")
+flat = true
+expand_icon = true
+script = ExtResource("5_2x2lf")
+icon_name = "ZoomMore"
+icon_size = 32
+
+[node name="Container" type="Control" parent="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Top"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FrameAll" type="Button" parent="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Top"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+tooltip_text = "Frame All"
+theme = ExtResource("5_6sk0i")
+flat = true
+expand_icon = true
+script = ExtResource("5_2x2lf")
+icon_name = "Area2D"
+icon_size = 32
+
+[node name="Center" type="HBoxContainer" parent="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Controls" type="VBoxContainer" parent="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Controls"]
+layout_mode = 2
+alignment = 1
+
+[node name="Begin" type="Button" parent="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Controls/Buttons"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("5_6sk0i")
+flat = true
+expand_icon = true
+script = ExtResource("5_2x2lf")
+icon_name = "ArrowLeft"
+icon_size = 32
+
+[node name="StepBack" type="Button" parent="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Controls/Buttons"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("5_6sk0i")
+flat = true
+expand_icon = true
+script = ExtResource("5_2x2lf")
+icon_name = "PlayStartBackwards"
+icon_size = 32
+
+[node name="Play" type="Button" parent="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Controls/Buttons"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("5_6sk0i")
+flat = true
+expand_icon = true
+script = ExtResource("5_2x2lf")
+icon_name = "Play"
+icon_size = 32
+
+[node name="StepForward" type="Button" parent="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Controls/Buttons"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("5_6sk0i")
+flat = true
+expand_icon = true
+script = ExtResource("5_2x2lf")
+icon_name = "PlayStart"
+icon_size = 32
+
+[node name="End" type="Button" parent="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Controls/Buttons"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("5_6sk0i")
+flat = true
+expand_icon = true
+script = ExtResource("5_2x2lf")
+icon_name = "ArrowRight"
+icon_size = 32
+
+[node name="Seek" type="HSlider" parent="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("5_6sk0i")
+max_value = 9.0
+step = 2.08165e-12
+scrollable = false
+tick_count = 10
+ticks_on_borders = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="Inspector" type="VBoxContainer" parent="HSplitContainer/HBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0.545098)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.25
+theme_override_constants/separation = 1
+script = ExtResource("3_e6xqh")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="HSplitContainer/Sidebar/UnusedWarning/Button" to="." method="_add_unused_motions"]
+[connection signal="pressed" from="HSplitContainer/Sidebar/UnusedWarning/Button/Button2" to="." method="_hide_unused_motions"]
+[connection signal="empty_clicked" from="HSplitContainer/Sidebar/Motion/List" to="." method="_on_anim_list_empty_clicked"]
+[connection signal="item_clicked" from="HSplitContainer/Sidebar/Motion/List" to="." method="_on_animation_item_selected"]
+[connection signal="gui_input" from="HSplitContainer/HBoxContainer/View" to="." method="_on_view_gui_input"]
+[connection signal="size_changed" from="HSplitContainer/HBoxContainer/View/SubViewportContainer/Viewport" to="." method="_on_viewport_size_changed"]
+[connection signal="zoom_in" from="HSplitContainer/HBoxContainer/View/AssetContainer" to="." method="_on_view_zoom_in"]
+[connection signal="zoom_out" from="HSplitContainer/HBoxContainer/View/AssetContainer" to="." method="_on_view_zoom_out"]
+[connection signal="pressed" from="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Top/ZoomOut" to="." method="_on_view_zoom_out_button"]
+[connection signal="pressed" from="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Top/ZoomPercent" to="." method="_on_zoom_percent_pressed"]
+[connection signal="pressed" from="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Top/ZoomIn" to="." method="_on_view_zoom_in_button"]
+[connection signal="pressed" from="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Top/FrameAll" to="." method="_frame_all"]
+[connection signal="pressed" from="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Controls/Buttons/Begin" to="." method="_on_begin_pressed"]
+[connection signal="pressed" from="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Controls/Buttons/StepBack" to="." method="_on_step_back_pressed"]
+[connection signal="pressed" from="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Controls/Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Controls/Buttons/StepForward" to="." method="_on_step_forward_pressed"]
+[connection signal="pressed" from="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Controls/Buttons/End" to="." method="_on_end_pressed"]
+[connection signal="drag_started" from="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Controls/Seek" to="." method="_on_seek_drag_started"]
+[connection signal="value_changed" from="HSplitContainer/HBoxContainer/View/AssetContainer/Overlay/Controls/Seek" to="." method="_on_seek_value_changed"]
