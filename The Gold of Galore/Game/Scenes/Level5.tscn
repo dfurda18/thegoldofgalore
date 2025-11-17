@@ -19,6 +19,10 @@ script = ExtResource("1_2yp7f")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+
 [node name="Background" type="Marker2D" parent="."]
 
 [node name="Player" type="Marker2D" parent="."]
